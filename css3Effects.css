@@ -1,0 +1,101 @@
+/*
+ * copyright benjamin intal
+ * https://github.com/bfintal/css3Effects
+ * 
+ * Inspired by http://www.red-team-design.com/how-to-create-slick-effects-with-css3-box-shadow
+ * 
+ * Available effect classes:
+ *   css3Effects-shadow-sides
+ *   css3Effects-shadow-mid
+ */
+.css3Effects-clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.css3Effects-clearfix {
+    display: inline-block;
+    font-size: 0;
+}
+ 
+html[xmlns] .css3Effects-clearfix {
+    display: block;
+}
+ 
+* html .css3Effects-clearfix {
+    height: 1%;
+}
+.css3Effects-shadow-sides, .css3Effects-shadow-mid
+{
+  position: relative;
+}
+.css3Effects-shadow-sides:before, .css3Effects-shadow-sides:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 18px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 15px 10px rgba(0,0,0, 0.7);
+  -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+
+.css3Effects-shadow-sides:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+.css3Effects-shadow-mid:before, .css3Effects-shadow-mid:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 17px;
+  right: 10%;
+  margin-right: 2px;
+  width: 50%;
+  top: 80%;
+  max-width:40%;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 15px 10px rgba(0,0,0, 0.7);
+  -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+.css3Effects-shadow-mid:after
+{
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+  margin-right: 0;
+  margin-left: 2px;
+  left: 10%;
+  right: auto;
+}
