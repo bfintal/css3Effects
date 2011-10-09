@@ -7,17 +7,17 @@ var css3Effect;
 (function($) {
     css3Effect = {
         fixAll: function() {
-            this.fixBlocked('css3Effects-shadow-sides');
-            this.fixBlocked('css3Effects-shadow-mid');
+            this.fixElement('css3Effects-shadow-sides');
+            this.fixElement('css3Effects-shadow-mid');
         },
     
-        fixBlocked: function(classToFix) {
+        fixElement: function(classToFix) {
             $('.'+classToFix).each(function() { 
-            console.log($(this));
-                var display = $(this).css('display');
-                if (display == '' || display != 'block') {
+                if ($(this).is('img, textarea, input')) {
                     $(this).removeClass(classToFix);
-                    $(this).after('<div class="css3Effects-clearfix"></div>').wrapAll('<div class="'+classToFix+'" style="float: left"/>');
+                    var floated = $(this).css('float');
+                    floated = floated == '' || floated == 'none' ? '' : 'float:'+floated;
+                    $(this).wrapAll('<span class="'+classToFix+'" style="'+floated+'"/>');
                 }
             });
         }
